@@ -4,7 +4,7 @@ class Pcontent extends Component {
     render() {
         return (
             <div>
-                
+                I am pcontent
             </div>
         );
     }
