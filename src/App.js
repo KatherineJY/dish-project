@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Home from "./component/Home";
-import User from "./component/User";
-import Shop from "./component/Shop";
-
 import "./assets/css/index.css";
+import routes from './model/router.js';
 
 class App extends Component {
   render() {
@@ -20,9 +17,33 @@ class App extends Component {
             <Link to="/shop">商户</Link>
           </header>
 
-          <Route exact path="/" component={Home} />
-          <Route path="/user" component={User} />
-          <Route path="/shop" component={Shop} />
+          {
+              routes.map((route,key)=>{
+
+                  if(route.exact){
+
+                    return <Route key={key} exact path={route.path}                     
+
+                    // route.component     value.component   <User  {...props}  routes={route.routes} />
+
+                    render={props => (
+                      // pass the sub-routes down to keep nesting
+                      <route.component {...props} routes={route.routes} />
+                    )}
+
+                    />
+                  }else{
+                    return <Route  key={key}  path={route.path} 
+                    render={props => (
+                      // pass the sub-routes down to keep nesting
+                      <route.component {...props} routes={route.routes} />
+                    )}
+                    />
+
+                  }
+              })
+            }          
+          })}
         </div>
       </Router>
     );
