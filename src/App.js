@@ -5,6 +5,7 @@ import './assets/css/index.css'
 
 import Home from './component/Home';
 import Pcontent from './component/Pcontent'
+import Login from './component/Login';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" component={Home}></Route>
+          <Route path="/login" component={Login} />
           <Route path="/pcontent/:id" component={Pcontent}></Route>
           
         </div>

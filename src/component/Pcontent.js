@@ -44,10 +44,8 @@ class Pcontent extends Component {
         </div>
         <div className="p_content">
           <div className="p_info">
-            <img
-              src={`${this.state.domain}${this.state.list.img_url}`}
-              alt=""
-            />
+            {this.state.list.img_url?<img src={`${this.state.domain}${this.state.list.img_url}`} alt="" />:""} 
+
             <h2>{this.state.list.title}</h2>
             <p className="price">
               {this.state.list.price}
