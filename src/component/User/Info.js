@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 
 
-class Home extends Component {
+class Info extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            msg:'我是一个home组件'
+            msg:'我是用户信息'
          };
     }    
     render() {
         return (
-            <div className="home">
-                我是一个Home组件
+            <div className="info">
+                我是用户信息组件
             </div>
         );
     }
 }
 
-export default Home;
+export default Info;
