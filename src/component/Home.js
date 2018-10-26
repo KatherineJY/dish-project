@@ -44,7 +44,7 @@ class Home extends Component {
                   {value.list.map((value, key) => {
                     return (
                       <li key={key}>
-                        <Link to={`/pcontent/${value.id}`}>
+                        <Link to={`/pcontent/${value._id}`}>
                           <div className="inner">
                             <img
                               src={`${this.state.domain}${value.img_url}`}
